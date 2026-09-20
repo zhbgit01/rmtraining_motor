@@ -37,10 +37,20 @@ ament_target_dependencies(pid_controller
   std_msgs
 )
 
+add_executable(dual_pid_controller
+  src/dual_pid_controller.cpp
+)
+
+ament_target_dependencies(dual_pid_controller
+  rclcpp
+  std_msgs
+)
+
 install(TARGETS
   motor_simulator
   input_source
   pid_controller
+  dual_pid_controller
   DESTINATION lib/${PROJECT_NAME}
 )
 
