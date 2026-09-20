@@ -28,9 +28,19 @@ ament_target_dependencies(input_source
   std_msgs
 )
 
+add_executable(pid_controller
+  src/pid_controller.cpp
+)
+
+ament_target_dependencies(pid_controller
+  rclcpp
+  std_msgs
+)
+
 install(TARGETS
   motor_simulator
   input_source
+  pid_controller
   DESTINATION lib/${PROJECT_NAME}
 )
 
